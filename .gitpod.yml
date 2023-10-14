@@ -1,6 +1,9 @@
-
-image: gitpod/workspace-dotnet-vnc
-
-vscode:
-  extensions:
-    - muhammad-sammy.csharp
+checkoutLocation: src/github.com/32leaves/hello-ui
+workspaceLocation: /
+image:
+    file: .gitpod.Dockerfile
+ports:
+  - port: 6080
+    protocol: "http"
+tasks:
+  - command: "go get -v ./... && go run main.go"
